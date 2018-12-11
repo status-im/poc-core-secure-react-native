@@ -1,0 +1,10 @@
+{
+  "name": "rn-android-native-poc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pedro Pombeiro <pombeirp@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react-native-cli": "^2.0.1"
+  }
+}
