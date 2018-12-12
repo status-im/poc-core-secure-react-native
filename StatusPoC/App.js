@@ -9,6 +9,7 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, Button, Text, View } from 'react-native'
 import ToastExample from './ToastExample'
+import CustomDialog from './CustomDialog'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,7 +19,8 @@ const instructions = Platform.select({
 });
 
 function showNativeDialog() {
-  ToastExample.show('Example toast', ToastExample.LONG)
+  ToastExample.show('Showing native dialog', ToastExample.SHORT)
+  CustomDialog.show()
 }
 
 type Props = {};
