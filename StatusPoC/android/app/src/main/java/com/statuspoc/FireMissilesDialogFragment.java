@@ -11,8 +11,9 @@ public class FireMissilesDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        String text = ReactSecureTextInputManager.getText("XYZ");
         builder.setMessage("Fire missiles?")
-               .setPositiveButton("Fire!", new DialogInterface.OnClickListener() {
+               .setPositiveButton(text, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                        // FIRE ZE MISSILES!
                    }

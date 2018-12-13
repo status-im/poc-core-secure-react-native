@@ -7,9 +7,10 @@
  */
 
 import React, { Component } from 'react'
-import { Platform, StyleSheet, Button, Text, View } from 'react-native'
+import { Platform, StyleSheet, Button, Text, TextInput, View } from 'react-native'
 import ToastExample from './ToastExample'
 import CustomDialog from './CustomDialog'
+import SecureTextInput from './SecureTextInput'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -23,17 +24,29 @@ function showNativeDialog() {
   CustomDialog.show()
 }
 
-type Props = {};
+type Props = {
+  text: string
+};
+
 export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <Button onPress={showNativeDialog} title="Show Native Dialog" />
-      </View>
-    );
+    state = { text: "Initial text" }
+
+    onChangeTextInput(text) {
+      this.setState({text})
+    }
+
+    render() {
+      return (
+        <View style={styles.container}>
+          <Text style={styles.welcome}>Welcome to React Native!</Text>
+          <Text style={styles.instructions}>To get started, edit App.js</Text>
+          <Text style={styles.instructions}>{instructions}</Text>
+          <Button key="button" onPress={showNativeDialog} title="Show Native Dialog" />
+          {/* <TextInput value={this.state.text} onChangeText={(text) => this.onChangeTextInput(text)} /> */}
+          <Text key="instructions" style={styles.instructions}>{this.state.text}</Text>
+          <SecureTextInput key="secure" registrationID="XYZ" />
+        </View>
+      );
   }
 }
 
