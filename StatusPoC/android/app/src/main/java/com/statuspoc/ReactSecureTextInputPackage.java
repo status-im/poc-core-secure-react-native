@@ -19,7 +19,8 @@ public class ReactSecureTextInputPackage implements ReactPackage {
   public List<ViewManager> createViewManagers(
                             ReactApplicationContext reactContext) {
     return Arrays.<ViewManager>asList(
-      new ReactSecureTextInputManager()
+      new ReactSecureTextInputManager(),
+      new SecureTextInputManager()
     );
   }
 

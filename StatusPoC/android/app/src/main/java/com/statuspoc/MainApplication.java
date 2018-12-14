@@ -43,6 +43,7 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     ReactSecureTextInputManager.setText("XYZ", "Initial text");
+    SecureTextInputManager.setText("XYZ", "Initial text");
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
   }

@@ -11,6 +11,7 @@ import { Platform, StyleSheet, Button, Text, TextInput, View } from 'react-nativ
 import ToastExample from './ToastExample'
 import CustomDialog from './CustomDialog'
 import SecureTextInput from './SecureTextInput'
+import SecureTextInput2 from './SecureTextInput2'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -45,6 +46,8 @@ export default class App extends Component<Props> {
           {/* <TextInput value={this.state.text} onChangeText={(text) => this.onChangeTextInput(text)} /> */}
           <Text key="instructions" style={styles.instructions}>{this.state.text}</Text>
           <SecureTextInput key="secure" registrationID="XYZ" />
+          <SecureTextInput2 key="secure" registrationID="XYZ" />
+          <SecureTextInput2 key="secure" registrationID="XYZ" />
         </View>
       );
   }
